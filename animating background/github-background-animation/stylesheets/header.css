@@ -1,0 +1,173 @@
+header {
+	/* -webkit-box-align: center; */
+	-ms-flex-align: center;
+	align-items: center;
+	background: rgb(255, 255, 255);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 18px;
+	height: 100vh;
+	/* -webkit-box-pack: center; */
+	-ms-flex-pack: center;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+
+	transform-style: preserve-3d;
+
+	perspective: 100px;
+}
+
+header:before {
+	animation: fade-slide-down 2.5s
+		cubic-bezier(0, 0.5, 0, 1) forwards;
+	background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.404),
+			rgb(0, 0, 0)
+		),
+		url(../images/back.jpg) no-repeat bottom;
+	background-size: cover;
+	opacity: 0;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+header:after {
+	animation: rotate-up 1s cubic-bezier(0, .5, 0, 1)
+		forwards;
+	background: #f9fcff;
+	content: "";
+	height: 40rem;
+	left: -5%;
+	position: absolute;
+	right: -5%;
+	top: 90%;
+	/* -webkit-transform: rotateZ(-4deg); */
+	/* transform: rotateZ(-4deg); */
+	transform-origin: 0 0;
+}
+
+.header-title,
+.header-subtitle {
+	color: #fff;
+}
+
+.header-title {
+	text-transform: uppercase;
+}
+
+.header-subtitle {
+	margin-bottom: 5rem;
+}
+
+.header-button {
+	position: relative;
+	transform: translateZ(.1px);
+	z-index: 10;
+}
+
+.animate-pop-in {
+	animation: pop-in 0.6s cubic-bezier(.02, .68, .24, 1.28)
+		forwards;
+	opacity: 0;
+}
+
+.rocky-dashed {
+	animation-delay: 0.6s;
+}
+
+.header-title {
+	animation-delay: 0.82s;
+}
+.header-subtitle {
+	animation-delay: 1.2s;
+}
+.header-button {
+	animation-delay: 1.5s;
+}
+
+.header-down-arrow {
+	animation: pulse 2s 2.5s ease-out infinite;
+	position: absolute;
+	bottom: 4vh;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 10;
+}
+
+.header-down-arrow img {
+	animation: fade-slide-up 1s 1s ease-out forwards;
+
+	opacity: 0;
+}
+
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+	animation-play-state: paused !important;
+}
+
+/* animation */
+
+@keyframes pulse {
+	0% {
+		opacity: 1;
+		transform: none;
+	}
+	50% {
+		opacity: .8;
+		transform: scale(.8);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes fade-slide-up {
+	0% {
+		opacity: 0;
+		transform: translateY(4rem);
+	}
+	100% {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-slide-down {
+	0% {
+		opacity: 0;
+		transform: translateY(-6rem);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes pop-in {
+	0% {
+		opacity: 0;
+		transform: translateY(-4rem) scale(.6);
+	}
+	100% {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+@keyframes rotate-up {
+	100% {
+		transform: rotateZ(-4deg);
+	}
+}
