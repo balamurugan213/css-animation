@@ -22,7 +22,7 @@ header:before {
 
 	background: linear-gradient(
 			to bottom,
-			rgba(0, 0, 0, .1),
+			rgba(0, 0, 0, 0.404),
 			rgba(0, 0, 0, 1)
 		),
 		url(../images/insta-01.jpg) no-repeat bottom;

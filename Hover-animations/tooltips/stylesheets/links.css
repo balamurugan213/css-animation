@@ -1,0 +1,29 @@
+/* Styles for the links */
+
+a {
+	position: relative;
+	text-decoration: none;
+	color: chartreuse;
+	transition: color .7s ease-out;
+	/* border-top: 20px solid #002477; */
+}
+
+a::after {
+	border-radius: 1em;
+	content: '';
+	position: absolute;
+	right: 100%;
+	bottom: 0em;
+	left: 0;
+	border-top: 10px solid #ffd001;
+	transition: right .7s ease-out;
+}
+
+a:hover {
+	text-decoration: none;
+	color: chocolate;
+}
+
+a:hover::after {
+	right: 0;
+}
